@@ -1,0 +1,232 @@
+:root {
+  --bg: #fbfbf8;
+  --text: #1d1f21;
+  --muted: #62666b;
+  --rule: #e3e3de;
+  --accent: #0f766e;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111417;
+    --text: #e4e5e2;
+    --muted: #9a9fa5;
+    --rule: #262b30;
+    --accent: #3fc7b3;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 var(--sans);
+}
+
+main, footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main { padding-top: 4.5rem; }
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+::selection { background: var(--accent); color: var(--bg); }
+
+/* intro */
+
+.intro {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.portrait {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin: 0.2rem 0 0.45rem;
+  color: var(--muted);
+}
+
+.links {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  font-size: 0.95rem;
+}
+.links span { color: var(--muted); }
+
+/* sections */
+
+section { margin: 0 0 2.25rem; }
+
+h2 {
+  margin: 0 0 1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
+  font: 600 0.78rem/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+section:first-of-type h2 { border-top: 0; }
+
+h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.02rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h3 .at {
+  font-weight: 400;
+  color: var(--muted);
+}
+h3 .at::before { content: "\00b7\00a0"; }
+
+h4 {
+  margin: 1.4rem 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+h4:first-of-type { margin-top: 0; }
+
+p { margin: 0 0 0.9rem; }
+section > p:last-child, .entry p:last-child { margin-bottom: 0; }
+
+ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+li { margin-bottom: 0.45rem; }
+li::marker { color: var(--muted); }
+
+ul.plain { padding-left: 0; list-style: none; margin: 0; }
+ul.plain li { padding-left: 1rem; position: relative; }
+ul.plain li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
+
+.meta { color: var(--muted); font-size: 0.93rem; }
+
+/* dated entries */
+
+.entry {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.entry:last-child { margin-bottom: 0; }
+
+.when {
+  margin: 0;
+  padding-top: 0.15rem;
+  font: 0.8rem/1.6 var(--mono);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* projects */
+
+dl { margin: 0; }
+
+.projects dt {
+  font-weight: 600;
+  margin-top: 0.85rem;
+}
+.projects dt:first-child { margin-top: 0; }
+.projects dd {
+  margin: 0.1rem 0 0;
+  color: var(--text);
+}
+
+.tag {
+  margin-left: 0.4rem;
+  font: 400 0.72rem var(--mono);
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.05rem 0.35rem;
+  vertical-align: 0.1em;
+}
+
+/* skills */
+
+.skills {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.45rem 1.25rem;
+}
+.skills dt {
+  font: 0.8rem/1.9 var(--mono);
+  color: var(--muted);
+}
+.skills dd { margin: 0; }
+
+/* footer */
+
+footer {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+footer p { margin: 0; }
+
+/* small screens */
+
+@media (max-width: 560px) {
+  main { padding-top: 2.5rem; }
+  .intro { align-items: flex-start; }
+  .portrait { width: 72px; height: 72px; }
+  h1 { font-size: 1.45rem; }
+  .entry, .skills { grid-template-columns: 1fr; }
+  .when { padding-top: 0; margin-bottom: 0.2rem; }
+  .skills dt { line-height: 1.4; }
+  .skills dd { margin-bottom: 0.5rem; }
+}
+
+/* print: the page doubles as a one-page summary */
+
+@media print {
+  :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; }
+  body { font-size: 10.5pt; }
+  main { padding-top: 0; max-width: none; }
+  a { color: inherit; text-decoration: none; }
+  section { break-inside: avoid; margin-bottom: 1.2rem; }
+  footer { display: none; }
+}

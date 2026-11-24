@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Ashraf Ragab | Penetration Testing</title>
+  <meta name="description" content="Mohamed Ashraf Ragab: penetration testing and OT/ICS security. Final-year Computer Science and Engineering student at the German University in Cairo.">
+  <meta name="author" content="Mohamed Ashraf Ragab">
+  <link rel="canonical" href="https://mo7amed214.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mohamed Ashraf Ragab | Penetration Testing">
+  <meta property="og:description" content="Penetration testing and OT/ICS security. Computer Science and Engineering, German University in Cairo.">
+  <meta property="og:url" content="https://mo7amed214.github.io/">
+  <meta property="og:image" content="https://mo7amed214.github.io/photo.jpg">
+  <meta property="profile:first_name" content="Mohamed">
+  <meta property="profile:last_name" content="Ashraf Ragab">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohamed Ashraf Ragab",
+    "alternateName": ["Mohamed Ashraf", "Mohamed Ragab"],
+    "url": "https://mo7amed214.github.io/",
+    "image": "https://mo7amed214.github.io/photo.jpg",
+    "jobTitle": "Penetration Testing",
+    "description": "Penetration testing and OT/ICS security. Computer Science and Engineering student at the German University in Cairo.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "German University in Cairo", "url": "https://www.guc.edu.eg/" },
+    "knowsAbout": ["Penetration testing", "Web application security", "OT/ICS security", "Honeypots", "Burp Suite", "Metasploit", "Wazuh", "Zeek", "OPC UA", "Python"],
+    "sameAs": [
+      "https://www.linkedin.com/in/mohamed-ashraf-ragab/",
+      "https://github.com/mo7amed214"
+    ]
+  }
+  </script>
+</head>
+<body>
+<main>
+
+  <header class="intro">
+    <img class="portrait" src="photo.jpg" width="96" height="96" alt="Mohamed Ashraf Ragab">
+    <div>
+      <h1>Mohamed Ashraf Ragab</h1>
+      <p class="role">Penetration testing &middot; OT/ICS security</p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/mohamed-ashraf-ragab/" rel="me">LinkedIn</a>
+        <a href="https://github.com/mo7amed214" rel="me">GitHub</a>
+        <span>Cairo, Egypt</span>
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <p>
+      I'm a final-year Computer Science and Engineering student at the German University in Cairo,
+      working toward a career in penetration testing. Most of what I do sits in three places:
+      web applications, internal networks, and the industrial systems that run factories.
+    </p>
+    <p>
+      I spent summer 2026 on the web penetration testing team at Securenass. For my bachelor thesis
+      I built a high-interaction honeypot of a plant's operations layer and then broke into it myself,
+      from a leaked password on a file share to rewriting live process values.
+    </p>
+  </section>
+
+  <section>
+    <h2>Now</h2>
+    <ul class="plain">
+      <li>Working through HTB Academy toward the Certified Penetration Testing Specialist (CPTS).</li>
+      <li>Building a home lab with Active Directory, segmented VLANs and Wazuh/Splunk to practise lateral movement and see it from the defender's side.</li>
+      <li>Planning a master's in IT security in Germany after graduating in 2027.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <p class="when">Jun &ndash; Sep 2026</p>
+      <div>
+        <h3>Penetration Testing Intern <span class="at">Securenass</span></h3>
+        <p>
+          Full-time internship in the Web Penetration Testing department. Web application testing
+          with Burp Suite and SQLmap, network enumeration with Nmap, and exploitation with
+          Metasploit on Kali Linux.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Thesis</h2>
+    <div class="entry">
+      <p class="when">Feb &ndash; Jun 2026</p>
+      <div>
+        <h3>Modeling Purdue Level 3 for an Industrial Honeypot</h3>
+        <p class="meta">Bachelor thesis, German University in Cairo. Supervised by Dr. Amr Mohamed Saber.</p>
+        <p>
+          A honeypot of the operations layer of a discrete-manufacturing plant, built as one layer of a
+          seven-person project. My part was the engineering workstation, a process historian, and an
+          OPC UA server in C (open62541) fed by a simulator in which tags actually affect each other,
+          so the plant behaves like a plant instead of a random-number generator.
+        </p>
+        <ul>
+          <li>An eight-step attack chain I implemented and validated: credentials in an anonymous SMB share, SSH, Nmap reconnaissance, historian and OPC UA access, ARP man-in-the-middle, then tag manipulation with asyncua. A quieter variant writes plausible values instead of obvious spikes.</li>
+          <li>Deception chosen from MITRE ATT&amp;CK for ICS, including a decoy OPC UA endpoint planted in the documentation. It measurably slowed down an autonomous LLM agent attacking the environment.</li>
+          <li>Detection with Sysmon, Zeek scripts, 26 custom Wazuh rules and Grafana dashboards for OT telemetry and SOC triage.</li>
+          <li>A bidirectional LSTM with attention that classifies attacker sessions by danger level, attack path and intent: 94.7% danger-level accuracy on 660 held-out examples.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <h4>Security</h4>
+    <dl class="projects">
+      <dt>Home SOC and enterprise lab <span class="tag">ongoing</span></dt>
+      <dd>Proxmox, OPNsense, VLANs, Windows Server with Active Directory, Wazuh, Zeek and Splunk, with Metasploitable and OWASP Juice Shop as targets.</dd>
+
+      <dt>DNS sinkhole on a Raspberry Pi</dt>
+      <dd>Pi-hole on a Pi Zero with network-wide blocklists, static addressing and router DHCP changes so every device resolves through it.</dd>
+    </dl>
+
+    <h4>Software and machine learning</h4>
+    <dl class="projects">
+      <dt>GUC Event Management System</dt>
+      <dd>MERN-stack campus platform with JWT and role-based access control, conflict-free booking and Stripe payments.</dd>
+
+      <dt>Formula 1 podium prediction</dt>
+      <dd>Team project on 1950&ndash;2024 race data. I owned the explainability work: permutation importance, Kernel SHAP and LIME.</dd>
+
+      <dt>Signature forgery detection</dt>
+      <dd>Siamese network with contrastive loss on CEDAR, Bengali and Hindi signatures, split by person to avoid leakage.</dd>
+
+      <dt>Operating system simulator</dt>
+      <dd>C and GTK-3: process control blocks, semaphores, memory frames, and Round Robin, FCFS and priority scheduling.</dd>
+
+      <dt>Station 7</dt>
+      <dd>C drivers and a test harness for an IMU, servo gimbal, DC motor, LCD, touch keys, ArUco camera and electromagnetic lock.</dd>
+    </dl>
+
+    <h4>Games</h4>
+    <dl class="projects">
+      <dt><a href="https://github.com/mo7amed214/dear-anna">Dear Anna</a></dt>
+      <dd>A narrative game set in St. Petersburg in 1909, made solo in Unity. You answer voiced letters by choosing the words that fill their blanks.</dd>
+
+      <dt>Pistol Stargate</dt>
+      <dd>Isometric bullet-hell shooter in Godot, made by a team of three. I designed and modelled the hub level in Blender.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Offensive</dt>
+      <dd>Burp Suite, Metasploit, SQLmap, Nmap, Kali Linux, SMB/SSH enumeration, ARP spoofing</dd>
+      <dt>Defensive</dt>
+      <dd>Wazuh, Zeek, Sysmon, Splunk, Grafana, Loki</dd>
+      <dt>OT/ICS</dt>
+      <dd>Purdue model, OPC UA (open62541, asyncua), historians, MITRE ATT&amp;CK for ICS</dd>
+      <dt>Infrastructure</dt>
+      <dd>Linux, Docker, Proxmox, OPNsense/pfSense, VLANs, Active Directory, Windows Server</dd>
+      <dt>Code</dt>
+      <dd>Python, C, C++, Java, JavaScript, C#</dd>
+      <dt>ML</dt>
+      <dd>scikit-learn, TensorFlow/Keras, SHAP, LIME, Hugging Face</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <p class="when">2022 &ndash; 2027</p>
+      <div>
+        <h3>B.Eng. Computer Science and Engineering <span class="at">German University in Cairo</span></h3>
+        <p>Faculty of Media Engineering and Technology. Graduating 2027.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <p class="when">Ongoing</p>
+      <div>
+        <h3>Hack The Box Academy</h3>
+        <p>Regular practice on Hack The Box, working toward the CPTS. Earlier self-study of the CompTIA Security+, Network+ and CySA+ material.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>Arabic (native), English (fluent), German (A2), Russian (A2).</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>The quickest way to reach me is a message on <a href="https://www.linkedin.com/in/mohamed-ashraf-ragab/">LinkedIn</a>. Code is on <a href="https://github.com/mo7amed214">GitHub</a>.</p>
+  </section>
+
+</main>
+<footer>
+  <p>&copy; 2026 Mohamed Ashraf Ragab &middot; Updated November 2026</p>
+</footer>
+</body>
+</html>
